@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NG娱乐平台首页</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      font-family: sans-serif;
+    }
+
+    /* 通知栏样式 */
+    .notice-bar {
+      display: flex;
+      align-items: center;
+      background: #003153;
+      color: #fff;
+      padding: 4px 10px;
+      font-size: 14px;
+    }
+
+    .notice-icon {
+      flex-shrink: 0;
+      font-size: 18px;
+      margin-right: 8px;
+      animation: shake 1s infinite;
+    }
+
+    .notice-marquee-wrapper {
+      overflow: hidden;
+      flex: 1;
+      position: relative;
+    }
+
+    .notice-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 15s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      75% { transform: translateX(3px); }
+    }
+
+    @keyframes shakeLR {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .shake-img {
+      animation: shake 0.6s infinite;
+    }
+
+    .shake-left-right {
+      animation: shakeLR 0.6s infinite;
+    }
+
+    /* 轮播图样式 */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .carousel-slide:nth-child(2) {
+      background: #003153;
+    }
+
+    /* 底部图片通用样式 */
+    .bottom-image {
+      text-align: center;
+      background: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .bottom-image img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 通知栏 -->
+  <div class="notice-bar">
+    <div class="notice-icon">🔊</div>
+    <div class="notice-marquee-wrapper">
+      <div class="notice-marquee">
+        欢迎光临 NG娱乐平台！祝您好运连连，畅玩到底！🎉🧧💰
+      </div>
+    </div>
+  </div>
+
+  <!-- 轮播图 -->
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://s21.ax1x.com/2025/05/29/pVpdCqg.jpg" alt="Banner 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="https://s21.ax1x.com/2025/05/29/pVpdCqg.jpg" alt="Banner 2">
+      </div>
+      <div class="carousel-slide">
+        <img src="https://s21.ax1x.com/2025/05/29/pVpdCqg.jpg" alt="Banner 3">
+      </div>
+    </div>
+  </div>
+
+  <!-- 自动轮播 -->
+  <script>
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.carousel-slide');
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  </script>
+
+  <!-- 底部图片列表 -->
+  <div class="bottom-image">
+    <a href="https://imgse.com/i/pVpd1o9" target="_blank">
+      <img src="https://s21.ax1x.com/2025/05/29/pVpd1o9.png" alt="底部按钮1" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://wxjump.paradisemall.net/app/register.php?site_id=800&topId=577994&aPlanId=1&isAllProxy=1" target="_blank">
+      <img class="shake-img" src="https://s21.ax1x.com/2025/05/29/pVpdGJ1.jpg" alt="底部按钮2" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://156.234.96.4:60009/#/link?invite=7842128" target="_blank">
+      <img class="shake-img" src="https://s21.ax1x.com/2025/05/29/pVpdwee.jpg" alt="底部按钮3" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1020&topId=2577839&aPlanId=1&isAllProxy=1" target="_blank">
+      <img class="shake-img" src="https://s21.ax1x.com/2025/05/29/pVpdcSP.jpg" alt="底部按钮4" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://156.234.87.120:8866/#/link?invite=2037305" target="_blank">
+      <img class="shake-img" src="https://s21.ax1x.com/2025/05/29/pVpdfeg.jpg" alt="底部按钮5" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1008&topId=1620765&aPlanId=1&isAllProxy=1" target="_blank">
+      <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpdIFs.jpg" alt="底部按钮6" />
+    </a>
+  </div>
+
+  <div class="bottom-image">
+    <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1017&topId=339751&aPlanId=1&isAllProxy=1&support_top_id=339751" target="_blank">
+      <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpdoYn.jpg" alt="底部按钮7" />
+    </a>
+  </div>
+
+  <!-- 底部图片 8（左右跳动） -->
+  <div class="bottom-image">
+    <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1019&topId=2243933&aPlanId=2&isAllProxy=1" target="_blank">
+      <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpdHS0.jpg" alt="底部按钮8" />
+    </a>
+  </div>
+  
+  <div class="bottom-image">
+  <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1010&topId=1926612&aPlanId=1&isAllProxy=1&support_top_id=1926612" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpwghR.jpg" alt="底部按钮新增" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1012&topId=2028417&aPlanId=1&isAllProxy=1&support_top_id=2028417" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpdqyT.jpg" alt="底部按钮新增2" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://wxjump.paradisemall.net/app/register.php?site_id=1021&topId=3719383&aPlanId=1&isAllProxy=1&support_top_id=3719383" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpdLOU.jpg" alt="底部按钮新增3" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://tz.wx-gujdtq3.com/app/register.php?site_id=2228&topId=798761&aPlanId=1&isAllProxy=1" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpw7AH.jpg" alt="底部按钮新增4" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://tz.wx-bffoix1.com/app/register.php?site_id=140436210&topId=123551&aPlanId=1&isAllProxy=1" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpwHNd.jpg" alt="底部按钮新增5" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://8118.pw/pg.html" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVp0ZuT.jpg" alt="底部按钮新增7" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://44999.co/" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpwfc6.jpg" alt="底部按钮新增9" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://www.wwtalk.com/" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVp0KUJ.jpg" alt="底部按钮新增10" />
+  </a>
+</div>
+
+  <div class="bottom-image">
+  <a href="https://t.me/NG8866COM" target="_blank">
+    <img class="shake-left-right" src="https://s21.ax1x.com/2025/05/29/pVpwW1x.jpg" alt="底部按钮新增6" />
+  </a>
+</div>
+</body>
+</html>
